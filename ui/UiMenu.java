@@ -19,7 +19,7 @@ public class UiMenu {
     public static Representante representanteLogueado;
     public static void mostrarmenu() {
         System.out.println("Selecciona la opcion deseada");
-        int respuesta = 0;
+        String respuesta = "";
         do {
             System.out.println("1. Profesor");
             System.out.println("2. Alumno");
@@ -27,33 +27,33 @@ public class UiMenu {
             System.out.println("0. Salir");
 
             Scanner sc = new Scanner(System.in);
-            respuesta = Integer.valueOf(sc.nextLine());
+            respuesta = sc.nextLine();
 
             switch (respuesta) {
-                case 1:
+                case "1":
                     System.out.println("Ingresaste Profesor");
                     System.out.println("Inserta your email: ej@gmail.com");
                     //respuesta = 0;
                     tipoUsuarioAutenticacion(1); // mostrar menu de profesor
                     break;
-                case 2:
+                case "2":
                     System.out.println("Ingresaste Alumno");
                     System.out.println("Inserta your email: ej@gmail.com");
                     //respuesta = 0;
                     tipoUsuarioAutenticacion(2); // mostrar menu de alumno
                     break;
-                case 3:
+                case "3":
                     System.out.println("Ingresaste Curso");
                     //respuesta = 0;
                     tipoUsuarioAutenticacion(3); // mostrar menu de cursos
                     break;
-                case 0:
+                case "0":
                     System.out.println("Gracias por tu visita... No vuelvas");
                     break;
                 default:
                     System.out.println("no sabes leer??? ingresa la opcion correcta");
             }
-        } while (respuesta != 0);
+        } while (respuesta != "0");
     }
 
     public static void tipoUsuarioAutenticacion(int tipoUsuario){
